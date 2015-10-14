@@ -1,8 +1,11 @@
-# npm Module Generator #
+# generator-vdom
 
-Generator for consumable npm modules, using browserify and `npm run` scripts as a build process.
+Generator for `virtual-dom` / `mercury` components. 
 
-## Install ##
+
+## Install
+
+Fork this repo, clone, customize, `npm link`.
 
 ```bash
 $ git clone https://github.com/nichoth/generator-npm.git
@@ -12,17 +15,8 @@ $ npm link
 
 ## Use ##
 
-```bash
-$ cd my-project && yo npm
-```
+    $ cd my-project && yo vdom
 
-Depends on npm init settings for author name, email, and github. Set them like this if they are not already:
-
-```
-$ npm config set init.author.name your name
-$ npm config set init.author.email your email
-$ npm config set init.author.github github handle
-```
 
 ## Example Output
 
@@ -30,7 +24,7 @@ $ npm config set init.author.github github handle
 ├── example/
 │   ├── example.js
 │   └── index.html
-├── index.js
+├── Component.js
 ├── package.json
 ├── readme.md
 └── server.js
@@ -40,10 +34,16 @@ package.json:
 
 ```json
 {
-  "name": "bla",
-  "description": "blablabla",
-  "main": "index.js",
+  "name": "vdom-example",
+  "description": "my description",
+  "main": "Example.js",
   "version": "0.0.0",
+  "keywords": [
+    "virtual-dom",
+    "mercury",
+    "component",
+    "ui"
+  ],
   "browserify": {
     "transform": []
   },
@@ -51,7 +51,8 @@ package.json:
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "browserify -d example/example.js > example/bundle.js",
     "watch": "watchify example/example.js -o example/bundle.js -dv",
-    "dev": "parallelshell \"npm run watch\" parallelshell \"npm run server\"",
+    "dev": "npm run watch & npm run server",
+    "postversion": "git push && git push --tags",
     "server": "node server.js",
     "demo": "browserify example/example.js > example/bundle.js && html-inline example/index.html | curl -sT- https://htmlb.in"
   },
@@ -63,8 +64,12 @@ package.json:
   "license": "ISC",
   "peerDependencies": {},
   "devDependencies": {
-    "parallelshell": "^1.1.1",
+    "main-loop": "^1.1.1",
     "ecstatic": "^0.8.0"
+  },
+  "dependencies": {
+    "@nichoth/state": "0.0.0",
+    "virtual-dom": "^1.0.0"
   }
 }
 ```

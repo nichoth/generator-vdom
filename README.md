@@ -21,9 +21,10 @@ $ npm link
 ## Example Output
 
 ```
-├── example/
+├── vdom-compoent/
 │   ├── example.js
 │   └── index.html
+├── node_modules/
 ├── Component.js
 ├── package.json
 ├── readme.md

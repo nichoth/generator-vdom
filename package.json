@@ -20,7 +20,8 @@
   "keywords": [
     "yeoman-generator",
     "generator",
-    "npm",
+    "virtual-dom",
+    "mercury",
     "browserify",
     "yeoman"
   ],

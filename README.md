@@ -8,8 +8,8 @@ Generator for `virtual-dom` / `mercury` components.
 Fork this repo, clone, customize, `npm link`.
 
 ```bash
-$ git clone https://github.com/nichoth/generator-npm.git
-$ cd generator-npm
+$ git clone https://github.com/nichoth/generator-vdom.git
+$ cd generator-vdom
 $ npm link
 ```
 

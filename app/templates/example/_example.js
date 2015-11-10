@@ -1,5 +1,4 @@
 var vdom = require('virtual-dom');
-var h = vdom.h;
 var <%=componentName%> = require('../<%=componentName%>.js');
 
 var state = <%=componentName%>({

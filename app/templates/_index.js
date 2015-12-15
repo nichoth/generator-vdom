@@ -3,6 +3,8 @@ var state = require('@nichoth/state');
 module.exports = <%=componentName%>;
 
 function <%=componentName%>(opts) {
+  opts = opts || {};
+
   var s = state({
 
   });

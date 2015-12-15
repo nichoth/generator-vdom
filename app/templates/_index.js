@@ -1,4 +1,3 @@
-var h = require('virtual-dom/h');
 var state = require('@nichoth/state');
 
 module.exports = <%=componentName%>;
@@ -11,6 +10,6 @@ function <%=componentName%>(opts) {
   return s;
 }
 
-<%=componentName%>.render = function(state) {
+<%=componentName%>.render = function(h, state) {
   return h('div', []);
 };

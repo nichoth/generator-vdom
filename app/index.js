@@ -46,7 +46,7 @@ module.exports = yeoman.generators.Base.extend({
       this.appName = props.appName;
       this.description = props.description;
       this.appNameSlug = slug(props.appName);
-      this.componentName = toComponentCase(this.appNameSlug);
+      this.componentName = props.componentName;
       this.mainFile = this.componentName+'.js';
       done();
     }.bind(this));
